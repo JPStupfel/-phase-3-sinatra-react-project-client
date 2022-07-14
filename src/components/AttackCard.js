@@ -6,7 +6,7 @@ export default function AttackCard({attack}){
 
 
     return(
-        <li>Attack Name: {attack.name};</li>
+        <li className="list-items">Attack Name: {attack.name};</li>
 
         )
 }

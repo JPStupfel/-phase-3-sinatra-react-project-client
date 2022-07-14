@@ -8,7 +8,7 @@ export default function AttackCardContainer({attackList}){
     
 
     return(
-        <ul>
+        <ul style={{'display': 'inline'}}>
            {attackCards}
         </ul>
 

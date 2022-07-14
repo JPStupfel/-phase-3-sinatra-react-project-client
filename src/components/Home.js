@@ -1,5 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import '../App.css';
+
 
 import AttackCardContainer from "./AttackCardContainer"
 
@@ -14,9 +16,21 @@ export default function Home(props){
     )
 
     return(
-        <div>
-        <div>Hello World!</div>
-        <AttackCardContainer attackList={attackList}/>
+        <div style={{'display':"flex"}} >
+
+            <div className="box">
+                <div>BJJ Attacks</div>
+                <AttackCardContainer attackList={attackList}/>
+            </div>
+
+            <div className="box">
+
+                <div style={{'width':'300px'}}>
+                    <img style={{'width':'inherit'}} src='https://evolve-mma.com/wp-content/uploads/2022/01/bia-mesquita-2-2.jpg'/>
+                </div>
+            </div>
+
+
         </div>
         
     )
