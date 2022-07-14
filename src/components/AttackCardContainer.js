@@ -3,10 +3,10 @@ import AttackCard from "./AttackCard"
 import 'bootstrap/dist/css/bootstrap.css';
 
 
-export default function AttackCardContainer({attackList}){
+export default function AttackCardContainer({handleClickAttack, attackList}){
 
 
-    const attackCards = attackList.map(e=><AttackCard attack={e} key={e.id}/>)
+    const attackCards = attackList.map(e=><AttackCard attack={e} key={e.id} handleClickAttack={handleClickAttack}/>)
     
 
     return(

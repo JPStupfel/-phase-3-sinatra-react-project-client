@@ -2,8 +2,9 @@ import React from "react"
 import 'bootstrap/dist/css/bootstrap.css';
 
 
-export default function AttackInfoContainer(){
+export default function AttackInfoContainer({currentAttack}){
 
+    console.log('currentAttack from info Container', currentAttack)
 
     return(
         <div id="page-content-wrapper">
@@ -34,7 +35,7 @@ export default function AttackInfoContainer(){
         </nav>
         <div class="container-fluid">
             <h1 class="mt-4">Simple Sidebar</h1>
-            <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+            <p>This Attack has a name of {currentAttack.name}, and a result of {currentAttack.result}.</p>
             <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p>
         </div>
     </div>
