@@ -1,4 +1,6 @@
 import React from "react"
+import 'bootstrap/dist/css/bootstrap.css';
+
 
 export default function AttackCard({attack}){
 
@@ -6,7 +8,8 @@ export default function AttackCard({attack}){
 
 
     return(
-        <li className="list-items">Attack Name: {attack.name};</li>
+
+        <a href="#" class="list-group-item list-group-item-action bg-light">{attack.name}</a>
 
         )
 }
