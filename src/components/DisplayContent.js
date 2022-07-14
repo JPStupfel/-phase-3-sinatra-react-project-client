@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 export default function DisplayContent({currentAttack}){
 
+    const [showGif, setShowGif] = useState(false)
 
     return(
 
@@ -12,7 +13,10 @@ export default function DisplayContent({currentAttack}){
             <p>This Attack has a name of {currentAttack.name}</p>
             <p>result of {currentAttack.result}.</p>
             <p>notes: {currentAttack.notes}</p>
-            {/* <img src={currentAttack.image}></img> */}
+            <button onClick={()=>setShowGif(e=>!e)}>{showGif ? "Hide Gif" : "Show Gif"}</button>
+            {
+            showGif ? 
+             <img src={currentAttack.image}></img> : <></> }
         </div>
     
         )

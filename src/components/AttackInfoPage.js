@@ -10,7 +10,7 @@ export default function AttackInfoPage({currentAttack}){
     return(
         <div id="page-content-wrapper">
         <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-            <button class="btn btn-primary" id="menu-toggle">Edit this Attack!</button>
+            <button onClick={()=>setIsEdit(e=>!e)} class="btn btn-primary" id="menu-toggle">{ isEdit ? 'Cancel' : 'Edit this Attack!'}</button>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -34,7 +34,7 @@ export default function AttackInfoPage({currentAttack}){
                 </ul>
             </div>
         </nav>
-        <DisplayContent currentAttack={currentAttack}/>
+        {!isEdit ? <DisplayContent currentAttack={currentAttack}/> : null}
     </div>
         )
 }
