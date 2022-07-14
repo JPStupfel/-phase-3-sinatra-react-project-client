@@ -4,12 +4,11 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 export default function AttackInfoContainer({currentAttack}){
 
-    console.log('currentAttack from info Container', currentAttack)
-
+    
     return(
         <div id="page-content-wrapper">
         <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-            <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+            <button class="btn btn-primary" id="menu-toggle">Edit this Attack!</button>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -34,9 +33,11 @@ export default function AttackInfoContainer({currentAttack}){
             </div>
         </nav>
         <div class="container-fluid">
-            <h1 class="mt-4">Simple Sidebar</h1>
-            <p>This Attack has a name of {currentAttack.name}, and a result of {currentAttack.result}.</p>
-            <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p>
+            <h1 class="mt-4">Details on this Attack!</h1>
+            <p>This Attack has a name of {currentAttack.name}</p>
+            <p>result of {currentAttack.result}.</p>
+            <p>notes: {currentAttack.notes}</p>
+            <img src={currentAttack.image}></img>
         </div>
     </div>
         )
