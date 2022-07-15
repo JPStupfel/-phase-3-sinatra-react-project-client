@@ -72,7 +72,7 @@ export default function Home(props){
         fetch(`http://localhost:9292/attacks/${attack.id}`, {method: 'DELETE'})
             .then((response) => response.json())
             .then((json) => {
-                debugger
+                
 
                 let newAttackList = attackList.filter(e=>e.id!==attack.id)
 
@@ -103,7 +103,22 @@ export default function Home(props){
 
     }
 
+    function handleDeleteDefense(defenseMod){
+        fetch(`http://localhost:9292/defenses/${defenseMod.id}`, {method: 'DELETE'})
+            .then((response) => response.json())
+            .then((json) => {
+                
 
+                let newDefenseList = defenseList.filter(e=>e.id!==defenseMod.id)
+
+                setDefenseList(newDefenseList)
+                setCurrentDefense({})
+                
+                
+            })
+    }
+
+    
 
     return(
     <div className="d-flex" id="wrapper">
@@ -129,6 +144,7 @@ export default function Home(props){
             handleDefensePatchSubmit={handleDefensePatchSubmit}
             setCurrentDefense={setCurrentDefense}
             currentDefense={currentDefense}
+            handleDeleteDefense={handleDeleteDefense}
             />
 
         }

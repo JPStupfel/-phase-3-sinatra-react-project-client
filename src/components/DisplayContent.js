@@ -9,10 +9,10 @@ export default function DisplayContent({
     defenseList,
     handleDefensePatchSubmit,
     setCurrentDefense,
-    currentDefense}){
+    currentDefense,
+    handleDeleteDefense}){
 
     const [showGif, setShowGif] = useState(true)
-
     // const [currentDefense, setCurrentDefense]=useState({})
     return(
 
@@ -44,7 +44,8 @@ export default function DisplayContent({
             <div className="image-box">
                 <DefenseDisplay 
                 currentDefense={currentDefense}
-                handleDefensePatchSubmit={handleDefensePatchSubmit} />
+                handleDefensePatchSubmit={handleDefensePatchSubmit}
+                handleDeleteDefense={handleDeleteDefense} />
             </div>
 
             </span>  

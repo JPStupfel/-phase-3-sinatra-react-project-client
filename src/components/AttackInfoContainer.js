@@ -9,9 +9,10 @@ export default function AttackInfoContainer({currentAttack,
     defenseList,
     handleDefensePatchSubmit,
     setCurrentDefense,
-    currentDefense}){
+    currentDefense,
+    handleDeleteDefense}){
     
-    
+        
     return(
         <>
         {
@@ -24,6 +25,7 @@ export default function AttackInfoContainer({currentAttack,
                 handleDefensePatchSubmit={handleDefensePatchSubmit}
                 setCurrentDefense={setCurrentDefense}
                 currentDefense={currentDefense}
+                handleDeleteDefense={handleDeleteDefense}
                 /> 
             :
                 <>Select an Attack to Begin</>
