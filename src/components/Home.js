@@ -23,7 +23,6 @@ export default function Home(props){
         ()=> {fetch('http://localhost:9292/defenses').then(r=>r.json()).then(d=>setDefenseList(d)) }
         ,[]
     )
-
     function handleClickAttack(newAttack){
         setCurrentAttack(newAttack)
     }   
@@ -106,6 +105,7 @@ export default function Home(props){
             currentAttack={currentAttack}
             handlePatchAttack={handlePatchAttack}
             handleDeleteAttack={handleDeleteAttack}
+            defenseList={defenseList}
             />
 
         }

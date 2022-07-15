@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import AttackInfoPage from "./AttackInfoPage";
 
 
-export default function AttackInfoContainer({currentAttack,handlePatchAttack,handleDeleteAttack}){
+export default function AttackInfoContainer({currentAttack,handlePatchAttack,handleDeleteAttack,defenseList}){
     
     
     return(
@@ -14,6 +14,7 @@ export default function AttackInfoContainer({currentAttack,handlePatchAttack,han
                 currentAttack={currentAttack} 
                 handlePatchAttack={handlePatchAttack}
                 handleDeleteAttack={handleDeleteAttack}
+                defenseList={defenseList}
                 /> 
             :
                 <>Select an Attack to Begin</>

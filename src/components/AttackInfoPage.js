@@ -4,7 +4,11 @@ import DisplayContent from "./DisplayContent";
 import EditAttack from "./EditAttack";
 
 
-export default function AttackInfoPage({currentAttack,handlePatchAttack,handleDeleteAttack}){
+export default function AttackInfoPage({
+    currentAttack,
+    handlePatchAttack,
+    handleDeleteAttack,
+    defenseList}){
 
     const [isEdit, setIsEdit] = useState(false)
 
@@ -18,7 +22,13 @@ export default function AttackInfoPage({currentAttack,handlePatchAttack,handleDe
 
           
         </nav>
-        {!isEdit ? <DisplayContent currentAttack={currentAttack}/> : <EditAttack currentAttack={currentAttack} handlePatchAttack={handlePatchAttack} setIsEdit={setIsEdit}/>}
+        {!isEdit ? 
+        <DisplayContent 
+        currentAttack={currentAttack}
+        defenseList={defenseList}/> 
+        : 
+        <EditAttack 
+        currentAttack={currentAttack} handlePatchAttack={handlePatchAttack} setIsEdit={setIsEdit}/>}
     </div>
         )
 }
