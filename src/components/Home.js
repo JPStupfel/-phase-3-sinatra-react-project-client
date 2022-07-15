@@ -3,8 +3,6 @@ import { useState, useEffect } from "react";
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-
-
 import AttackCardContainer from "./AttackCardContainer"
 import AttackInfoContainer from "./AttackInfoContainer";
 import AddAttack from "./AddAttack";
@@ -13,11 +11,16 @@ import AddAttack from "./AddAttack";
 export default function Home(props){
 
     const [attackList, setAttackList] = useState([])
+    const [defenseList, setDefenseList] = useState([])
     const [currentAttack, setCurrentAttack] = useState({})
     const [isAdd, setIsAdd] = useState(false)
 
     useEffect(
         ()=> {fetch('http://localhost:9292/attacks').then(r=>r.json()).then(d=>setAttackList(d)) }
+        ,[]
+    )
+    useEffect(
+        ()=> {fetch('http://localhost:9292/defenses').then(r=>r.json()).then(d=>setDefenseList(d)) }
         ,[]
     )
 

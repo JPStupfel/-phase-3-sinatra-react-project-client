@@ -12,13 +12,11 @@ export default function AddAttack({ handlePostAttack, setIsAdd}){
         setAttackMod(newAttack)
     }
 
-
     function handleSubmit(event){
-        
         event.preventDefault();
-        
         handlePostAttack(attackMod)
     }
+
     return(
         <form
         onSubmit={handleSubmit}>
