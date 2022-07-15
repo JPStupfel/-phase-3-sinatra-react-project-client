@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import 'bootstrap/dist/css/bootstrap.css';
 import DefenseCardContainer from "./DefenseCardContainer";
+import DefenseDisplay from "./DefenseDisplay";
 
 
 export default function DisplayContent({currentAttack,defenseList}){
@@ -8,6 +9,8 @@ export default function DisplayContent({currentAttack,defenseList}){
     const [showGif, setShowGif] = useState(true)
     console.log(defenseList)
 
+    const [currentDefense, setCurrentDefense]=useState({})
+    console.log(currentDefense)
     return(
 
         <div >
@@ -19,9 +22,7 @@ export default function DisplayContent({currentAttack,defenseList}){
                     <p>notes: {currentAttack.notes}</p>
                 </div>
                 
-                {/* <DefenseCardContainer
-                currentAttack={currentAttack}
-                defenseList={defenseList} /> */}
+              
                 <div className="image-box">
                     <button onClick={()=>setShowGif(e=>!e)}>{showGif ? "Hide Gif" : "Show Gif"}</button>
                     {
@@ -30,14 +31,18 @@ export default function DisplayContent({currentAttack,defenseList}){
                 </div>
                     
             </span>
-{/* 
-            <button onClick={()=>setShowGif(e=>!e)}>{showGif ? "Hide Gif" : "Show Gif"}</button>
-            {
-            showGif ? 
-             <img className="image-box" src={currentAttack.image}></img> : <></> } */}
+            <span style={{"display":"flex", "width":"100%"}} >          
+
                <DefenseCardContainer
                 currentAttack={currentAttack}
-                defenseList={defenseList} />
+                defenseList={defenseList}
+                setCurrentDefense={setCurrentDefense} />
+
+            <div className="image-box">
+                <DefenseDisplay currentDefense={currentDefense} />
+            </div>
+
+            </span>  
         </div>
     
         )

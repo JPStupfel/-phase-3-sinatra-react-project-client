@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import DefenseCard from "./DefenseCard";
 
 
-export default function DefenseCardContainer({ defenseList, currentAttack}){
+export default function DefenseCardContainer({ defenseList, currentAttack, setCurrentDefense}){
 
 
     const showDefenses = defenseList.filter(e=>e.attack_id==currentAttack.id)
@@ -12,15 +12,12 @@ export default function DefenseCardContainer({ defenseList, currentAttack}){
 
     const defenseCards = showDefenses.map(
         e=>
-        <DefenseCard defense={e} key={e.id}/>         
+        <DefenseCard setCurrentDefense={setCurrentDefense} defense={e} key={e.id}/>         
         )
     
 
     return(
-        <div style={{
-            "width": "50%", 
-            "border":"solid"
-            }}  id="sidebar-wrapper">
+        <div className="image-box"  id="sidebar-wrapper">
             
             <div class="sidebar-heading">BJJ Defenses </div>
 
