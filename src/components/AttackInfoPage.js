@@ -35,7 +35,7 @@ export default function AttackInfoPage({currentAttack,handlePatchAttack}){
                 </ul>
             </div>
         </nav>
-        {!isEdit ? <DisplayContent currentAttack={currentAttack}/> : <EditAttack currentAttack={currentAttack} handlePatchAttack={handlePatchAttack} />}
+        {!isEdit ? <DisplayContent currentAttack={currentAttack}/> : <EditAttack currentAttack={currentAttack} handlePatchAttack={handlePatchAttack} setIsEdit={setIsEdit}/>}
     </div>
         )
 }

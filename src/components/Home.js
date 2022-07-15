@@ -34,7 +34,7 @@ export default function Home(props){
             },
           })
             .then((response) => response.json())
-            .then((json) =>{console.log(json)})
+            .then((json) =>{console.log(json); setCurrentAttack(attackMod)})
         
     }
 

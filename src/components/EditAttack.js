@@ -2,7 +2,7 @@ import React, {useState} from "react"
 import 'bootstrap/dist/css/bootstrap.css';
 
 
-export default function EditAttack({currentAttack, handlePatchAttack}){
+export default function EditAttack({currentAttack, handlePatchAttack, setIsEdit}){
     const [attackMod, setAttackMod] = useState(currentAttack)
 
     function handleChange(event){
@@ -18,6 +18,7 @@ export default function EditAttack({currentAttack, handlePatchAttack}){
         
         event.preventDefault();
         handlePatchAttack(attackMod)
+        setIsEdit(prev=>!prev)
     }
     return(
         <form
