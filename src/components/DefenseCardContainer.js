@@ -4,10 +4,16 @@ import 'bootstrap/dist/css/bootstrap.css';
 import DefenseCard from "./DefenseCard";
 
 
-export default function DefenseCardContainer({ defenseList}){
+export default function DefenseCardContainer({ defenseList, currentAttack}){
 
 
-    const defenseCards = defenseList.map(e=><DefenseCard defense={e} key={e.id} />)
+    const showDefenses = defenseList.filter(e=>e.attack_id==currentAttack.id)
+    console.log(showDefenses)
+
+    const defenseCards = showDefenses.map(
+        e=>
+        <DefenseCard defense={e} key={e.id}/>         
+        )
     
 
     return(

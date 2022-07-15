@@ -24,7 +24,7 @@ export default function DisplayContent({currentAttack,defenseList}){
                 </div>
                 
                 <DefenseCardContainer
-
+                currentAttack={currentAttack}
                 defenseList={defenseList} />
             </span>
 
