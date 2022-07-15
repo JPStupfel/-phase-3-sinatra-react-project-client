@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import 'bootstrap/dist/css/bootstrap.css';
 import DisplayContent from "./DisplayContent";
+import EditAttack from "./EditAttack";
 
 
 export default function AttackInfoPage({currentAttack}){
@@ -34,7 +35,7 @@ export default function AttackInfoPage({currentAttack}){
                 </ul>
             </div>
         </nav>
-        {!isEdit ? <DisplayContent currentAttack={currentAttack}/> : null}
+        {!isEdit ? <DisplayContent currentAttack={currentAttack}/> : <EditAttack currentAttack={currentAttack} />}
     </div>
         )
 }
