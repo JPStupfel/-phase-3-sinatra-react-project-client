@@ -58,9 +58,10 @@ export default function Home(props){
           })
             .then((response) => response.json())
             .then((json) =>{
-                console.log(json); setCurrentAttack(attackMod);
+                
                 let newAttackList = [...attackList, json]
                 setAttackList(newAttackList)
+                setIsAdd(prev=>!prev)
             })
     }
 
