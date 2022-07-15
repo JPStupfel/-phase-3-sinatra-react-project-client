@@ -65,6 +65,21 @@ export default function Home(props){
             })
     }
 
+    function handleDeleteAttack(attack){
+        fetch(`http://localhost:9292/attacks/${attack.id}`, {method: 'DELETE'})
+            .then((response) => response.json())
+            .then((json) => {
+                debugger
+
+                let newAttackList = attackList.filter(e=>e.id!==attack.id)
+
+                setAttackList(newAttackList)
+                setCurrentAttack({})
+                
+                
+            })
+        
+    }
 
 
 
@@ -87,6 +102,7 @@ export default function Home(props){
             <AttackInfoContainer 
             currentAttack={currentAttack}
             handlePatchAttack={handlePatchAttack}
+            handleDeleteAttack={handleDeleteAttack}
             />
 
         }
