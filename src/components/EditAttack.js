@@ -2,7 +2,7 @@ import React, {useState} from "react"
 import 'bootstrap/dist/css/bootstrap.css';
 
 
-export default function EditAttack({currentAttack}){
+export default function EditAttack({currentAttack, handlePatchAttack}){
     const [attackMod, setAttackMod] = useState(currentAttack)
 
     function handleChange(event){
@@ -12,10 +12,12 @@ export default function EditAttack({currentAttack}){
         console.log(newAttack)
     }
 
-
+    //1. post request
+    //2. update app state based on changes
     function handleSubmit(event){
+        
         event.preventDefault();
-
+        handlePatchAttack(attackMod)
     }
     return(
         <form
@@ -65,6 +67,7 @@ export default function EditAttack({currentAttack}){
              </p>
 
         </div>
+        <button type='submit'>Submit</button>
         </form>
     
         )

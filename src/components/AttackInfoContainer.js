@@ -3,14 +3,19 @@ import 'bootstrap/dist/css/bootstrap.css';
 import AttackInfoPage from "./AttackInfoPage";
 
 
-export default function AttackInfoContainer({currentAttack}){
+export default function AttackInfoContainer({currentAttack,handlePatchAttack}){
     console.log(currentAttack)
     
     return(
         <>
-        {currentAttack.id ?
-        <AttackInfoPage currentAttack={currentAttack} /> :
-        <>Select an Attack to Begin</>
+        {
+            currentAttack.id ?
+                <AttackInfoPage 
+                currentAttack={currentAttack} 
+                handlePatchAttack={handlePatchAttack}
+                /> 
+            :
+                <>Select an Attack to Begin</>
         }
         </>
         )

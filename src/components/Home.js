@@ -25,6 +25,10 @@ export default function Home(props){
         setCurrentAttack(newAttack)
     }   
 
+    function handlePatchAttack(attackMod){
+        console.log(`got ${attackMod.id} to app for patch`)
+    }
+
 // console.log(currentAttack)
 
 
@@ -36,7 +40,10 @@ export default function Home(props){
         handleClickAttack={handleClickAttack} 
         attackList={attackList} />
 
-        <AttackInfoContainer currentAttack={currentAttack}/>
+        <AttackInfoContainer 
+        currentAttack={currentAttack}
+        handlePatchAttack={handlePatchAttack}
+        />
         
     </div>
         
