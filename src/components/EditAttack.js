@@ -12,8 +12,7 @@ export default function EditAttack({currentAttack, handlePatchAttack, setIsEdit}
         console.log(newAttack)
     }
 
-    //1. post request
-    //2. update app state based on changes
+
     function handleSubmit(event){
         
         event.preventDefault();

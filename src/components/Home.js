@@ -38,11 +38,23 @@ export default function Home(props){
         
     }
 
-    function handlePostAttack(newAttack){
-        console.log('ready to post')
+    function handlePostAttack(attackMod){
+        console.log(attackMod)
+
+        fetch(`http://localhost:9292/attacks`, {
+            method: 'POST',
+            body: JSON.stringify(attackMod),
+            headers: {
+              'Content-type': 'application/json; charset=UTF-8',
+            },
+          })
+            .then((response) => response.json())
+            .then((json) =>{
+                console.log(json); setCurrentAttack(attackMod)
+                setAttackList([...attackList,attackMod])
+            })
     }
 
-    useState( ()=>console.log(isAdd), [isAdd])
 
 
 

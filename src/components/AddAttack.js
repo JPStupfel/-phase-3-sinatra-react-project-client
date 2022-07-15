@@ -4,17 +4,15 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 export default function AddAttack({ handlePostAttack, setIsAdd}){
 
-    const [attackMod, setAttackMod] = useState({})
+    const [attackMod, setAttackMod] = useState({name:'',result:'',notes:'',image:''})
 
     function handleChange(event){
-        let newAttack = {}
+        let newAttack = {...attackMod}
         newAttack[event.target.id] = event.target.value
         setAttackMod(newAttack)
-        console.log(newAttack)
     }
 
-    //1. post request
-    //2. update app state based on changes
+
     function handleSubmit(event){
         
         event.preventDefault();
@@ -46,15 +44,15 @@ export default function AddAttack({ handlePostAttack, setIsAdd}){
             </p>
             
             <p>notes: 
-                <input 
+                <textarea 
                     id='notes' 
                     value={attackMod.notes}
                     onChange={handleChange}
                     >
-                </input> 
+                </textarea> 
             </p>
             
-            <p>Change Image Source
+            <p>Add Image Source
                 <input 
                     id='image' 
                     value={attackMod.image}
