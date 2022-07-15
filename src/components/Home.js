@@ -34,7 +34,15 @@ export default function Home(props){
             },
           })
             .then((response) => response.json())
-            .then((json) =>{console.log(json); setCurrentAttack(attackMod)})
+            .then((json) =>{
+                console.log(json); setCurrentAttack(attackMod);
+
+                let newAttackList = attackList.map(e=>e.id===attackMod.id ? attackMod : e)
+
+                setAttackList(newAttackList)
+                
+                
+            })
         
     }
 
@@ -51,7 +59,7 @@ export default function Home(props){
             .then((response) => response.json())
             .then((json) =>{
                 console.log(json); setCurrentAttack(attackMod)
-                setAttackList([...attackList,attackMod])
+                setAttackList([...attackList,json])
             })
     }
 
