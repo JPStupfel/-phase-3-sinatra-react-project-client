@@ -46,12 +46,23 @@
   
   
 }
-.image-box{
+img{
             max-width: 100%;
             max-height: 100vh;
             margin: auto;
             display: grid;
-            height: 100%;
+            width: 100%;
+
+}
+.image-box{
+           border: solid;
+           max-width: 100%;
+            margin: auto;
+            display: grid;
+            width: 50%;
+            height:50vh
+            
+
 
 }
 input {display: flex;

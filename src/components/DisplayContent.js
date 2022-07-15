@@ -12,26 +12,32 @@ export default function DisplayContent({currentAttack,defenseList}){
 
         <div >
             <span style={{"display":"flex", "width":"100%"}} >
-                <div 
-                style={{
-                    // "display": "inline-block",
-                    "border-style":"solid"
-                    }}>
+                <div className="image-box">
                     <h1 class="mt-4">Details on this Attack!</h1>
                     <p>This Attack has a name of {currentAttack.name}</p>
                     <p>result of {currentAttack.result}.</p>
                     <p>notes: {currentAttack.notes}</p>
                 </div>
                 
-                <DefenseCardContainer
+                {/* <DefenseCardContainer
                 currentAttack={currentAttack}
-                defenseList={defenseList} />
+                defenseList={defenseList} /> */}
+                <div className="image-box">
+                    <button onClick={()=>setShowGif(e=>!e)}>{showGif ? "Hide Gif" : "Show Gif"}</button>
+                    {
+                    showGif ? 
+                    <img className="image" src={currentAttack.image}></img> : <></> }
+                </div>
+                    
             </span>
-
+{/* 
             <button onClick={()=>setShowGif(e=>!e)}>{showGif ? "Hide Gif" : "Show Gif"}</button>
             {
             showGif ? 
-             <img className="image-box" src={currentAttack.image}></img> : <></> }
+             <img className="image-box" src={currentAttack.image}></img> : <></> } */}
+               <DefenseCardContainer
+                currentAttack={currentAttack}
+                defenseList={defenseList} />
         </div>
     
         )
