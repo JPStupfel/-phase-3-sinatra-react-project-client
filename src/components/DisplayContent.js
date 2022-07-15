@@ -7,10 +7,8 @@ import DefenseDisplay from "./DefenseDisplay";
 export default function DisplayContent({currentAttack,defenseList}){
 
     const [showGif, setShowGif] = useState(true)
-    console.log(defenseList)
 
     const [currentDefense, setCurrentDefense]=useState({})
-    console.log(currentDefense)
     return(
 
         <div >

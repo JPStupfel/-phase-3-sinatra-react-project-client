@@ -8,7 +8,6 @@ export default function DefenseCardContainer({ defenseList, currentAttack, setCu
 
 
     const showDefenses = defenseList.filter(e=>e.attack_id==currentAttack.id)
-    console.log(showDefenses)
 
     const defenseCards = showDefenses.map(
         e=>
