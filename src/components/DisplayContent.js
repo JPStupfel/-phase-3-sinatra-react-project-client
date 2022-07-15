@@ -4,11 +4,16 @@ import DefenseCardContainer from "./DefenseCardContainer";
 import DefenseDisplay from "./DefenseDisplay";
 
 
-export default function DisplayContent({currentAttack,defenseList}){
+export default function DisplayContent({
+    currentAttack,
+    defenseList,
+    handleDefensePatchSubmit,
+    setCurrentDefense,
+    currentDefense}){
 
     const [showGif, setShowGif] = useState(true)
 
-    const [currentDefense, setCurrentDefense]=useState({})
+    // const [currentDefense, setCurrentDefense]=useState({})
     return(
 
         <div >
@@ -37,7 +42,9 @@ export default function DisplayContent({currentAttack,defenseList}){
                 setCurrentDefense={setCurrentDefense} />
 
             <div className="image-box">
-                <DefenseDisplay currentDefense={currentDefense} />
+                <DefenseDisplay 
+                currentDefense={currentDefense}
+                handleDefensePatchSubmit={handleDefensePatchSubmit} />
             </div>
 
             </span>  

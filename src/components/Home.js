@@ -14,6 +14,7 @@ export default function Home(props){
     const [defenseList, setDefenseList] = useState([])
     const [currentAttack, setCurrentAttack] = useState({})
     const [isAdd, setIsAdd] = useState(false)
+    const [currentDefense, setCurrentDefense]=useState({})
 
     useEffect(
         ()=> {fetch('http://localhost:9292/attacks').then(r=>r.json()).then(d=>setAttackList(d)) }
@@ -83,6 +84,25 @@ export default function Home(props){
         
     }
 
+    function handleDefensePatchSubmit(defenseMod){
+        console.log('from Home', defenseMod)
+
+        let newDefenseList = defenseList.map(e=>e.id===defenseMod.id ? defenseMod : e)
+        setDefenseList(newDefenseList)
+
+        setCurrentDefense(defenseMod)
+
+        fetch(`http://localhost:9292/defenses/${defenseMod.id}`, {
+            method: 'PATCH',
+            body: JSON.stringify(defenseMod),
+            headers: {
+              'Content-type': 'application/json; charset=UTF-8',
+            },
+          }).then(r=>r.json()).then(d=>console.log(d))
+
+
+    }
+
 
 
     return(
@@ -106,6 +126,9 @@ export default function Home(props){
             handlePatchAttack={handlePatchAttack}
             handleDeleteAttack={handleDeleteAttack}
             defenseList={defenseList}
+            handleDefensePatchSubmit={handleDefensePatchSubmit}
+            setCurrentDefense={setCurrentDefense}
+            currentDefense={currentDefense}
             />
 
         }

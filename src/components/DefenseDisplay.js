@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import DefenseEditor from "./DefenseEditor";
 
-export default function DefenseDisplay({currentDefense}){
+export default function DefenseDisplay({currentDefense, handleDefensePatchSubmit}){
 
     const [isEditDefense, setIsEditDefense] = useState(false)
 
@@ -14,6 +14,8 @@ export default function DefenseDisplay({currentDefense}){
         <button>Delete This Defense</button>
 
     </div> }
+    
+
 
 
 
@@ -26,7 +28,8 @@ export default function DefenseDisplay({currentDefense}){
         isEditDefense ?
         <DefenseEditor 
         currentDefense={currentDefense}
-        setIsEditDefense={setIsEditDefense} />
+        setIsEditDefense={setIsEditDefense}
+        handleDefensePatchSubmit={handleDefensePatchSubmit}/>
         :
        <DefenseContentDisplay currentDefense={currentDefense} />
        
