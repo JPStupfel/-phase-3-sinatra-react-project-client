@@ -26,7 +26,16 @@ export default function Home(props){
     }   
 
     function handlePatchAttack(attackMod){
-        console.log(`got ${attackMod.id} to app for patch`)
+        fetch(`http://localhost:9292/attacks/${attackMod.id}`, {
+            method: 'PATCH',
+            body: JSON.stringify(attackMod),
+            headers: {
+              'Content-type': 'application/json; charset=UTF-8',
+            },
+          })
+            .then((response) => response.json())
+            .then((json) =>{console.log(json)})
+        
     }
 
 // console.log(currentAttack)
