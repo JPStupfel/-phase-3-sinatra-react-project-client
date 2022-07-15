@@ -35,7 +35,7 @@ export default function Home(props){
           })
             .then((response) => response.json())
             .then((json) =>{
-                console.log(json); setCurrentAttack(attackMod);
+                setCurrentAttack(attackMod);
 
                 let newAttackList = attackList.map(e=>e.id===attackMod.id ? attackMod : e)
 
@@ -47,7 +47,7 @@ export default function Home(props){
     }
 
     function handlePostAttack(attackMod){
-        console.log(attackMod)
+   
 
         fetch(`http://localhost:9292/attacks`, {
             method: 'POST',
@@ -58,8 +58,9 @@ export default function Home(props){
           })
             .then((response) => response.json())
             .then((json) =>{
-                console.log(json); setCurrentAttack(attackMod)
-                setAttackList([...attackList,json])
+                console.log(json); setCurrentAttack(attackMod);
+                let newAttackList = [...attackList, json]
+                setAttackList(newAttackList)
             })
     }
 

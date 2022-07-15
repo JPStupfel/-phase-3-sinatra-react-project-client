@@ -4,7 +4,7 @@ import AttackInfoPage from "./AttackInfoPage";
 
 
 export default function AttackInfoContainer({currentAttack,handlePatchAttack}){
-    console.log(currentAttack)
+    
     
     return(
         <>

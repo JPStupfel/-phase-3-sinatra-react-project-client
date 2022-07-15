@@ -16,6 +16,7 @@ export default function AddAttack({ handlePostAttack, setIsAdd}){
     function handleSubmit(event){
         
         event.preventDefault();
+        
         handlePostAttack(attackMod)
     }
     return(

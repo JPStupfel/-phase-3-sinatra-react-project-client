@@ -9,7 +9,6 @@ export default function EditAttack({currentAttack, handlePatchAttack, setIsEdit}
         let newAttack = {...currentAttack}
         newAttack[event.target.id] = event.target.value
         setAttackMod(newAttack)
-        console.log(newAttack)
     }
 
 
