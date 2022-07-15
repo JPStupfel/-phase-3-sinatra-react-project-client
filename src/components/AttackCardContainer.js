@@ -3,7 +3,7 @@ import AttackCard from "./AttackCard"
 import 'bootstrap/dist/css/bootstrap.css';
 
 
-export default function AttackCardContainer({handleClickAttack, attackList}){
+export default function AttackCardContainer({handleClickAttack, attackList, setIsAdd}){
 
 
     const attackCards = attackList.map(e=><AttackCard attack={e} key={e.id} handleClickAttack={handleClickAttack}/>)
@@ -15,6 +15,7 @@ export default function AttackCardContainer({handleClickAttack, attackList}){
         <div class="list-group list-group-flush overflow-auto h-100">
           
             {attackCards}
+            <button onClick={()=>setIsAdd(p=>!p)}>Add Attack!</button>
         </div>
     </div>
 

@@ -5,16 +5,16 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 
 
-
 import AttackCardContainer from "./AttackCardContainer"
 import AttackInfoContainer from "./AttackInfoContainer";
+import AddAttack from "./AddAttack";
 
 
 export default function Home(props){
 
     const [attackList, setAttackList] = useState([])
     const [currentAttack, setCurrentAttack] = useState({})
-
+    const [isAdd, setIsAdd] = useState(false)
 
     useEffect(
         ()=> {fetch('http://localhost:9292/attacks').then(r=>r.json()).then(d=>setAttackList(d)) }
@@ -38,7 +38,11 @@ export default function Home(props){
         
     }
 
-// console.log(currentAttack)
+    function handlePostAttack(newAttack){
+        console.log('ready to post')
+    }
+
+    useState( ()=>console.log(isAdd), [isAdd])
 
 
 
@@ -47,13 +51,23 @@ export default function Home(props){
 
         <AttackCardContainer 
         handleClickAttack={handleClickAttack} 
-        attackList={attackList} />
+        attackList={attackList}
+        setIsAdd={setIsAdd} />
 
-        <AttackInfoContainer 
-        currentAttack={currentAttack}
-        handlePatchAttack={handlePatchAttack}
-        />
-        
+        { isAdd ?
+
+            <AddAttack 
+            handlePostAttack={handlePostAttack}
+            setIsAdd={setIsAdd} />
+
+         : 
+
+            <AttackInfoContainer 
+            currentAttack={currentAttack}
+            handlePatchAttack={handlePatchAttack}
+            />
+
+        }
     </div>
         
     )
