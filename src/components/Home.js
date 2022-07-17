@@ -127,20 +127,20 @@ export default function Home(props){
     function handlePostDefense(defenseMod){
    
         console.log('ready post', defenseMod)
-        // fetch(`http://localhost:9292/attacks`, {
-        //     method: 'POST',
-        //     body: JSON.stringify(defenseMod),
-        //     headers: {
-        //       'Content-type': 'application/json; charset=UTF-8',
-        //     },
-        //   })
-        //     .then((response) => response.json())
-        //     .then((json) =>{
+        fetch(`http://localhost:9292/defenses`, {
+            method: 'POST',
+            body: JSON.stringify(defenseMod),
+            headers: {
+              'Content-type': 'application/json; charset=UTF-8',
+            },
+          })
+            .then((response) => response.json())
+            .then((json) =>{
                 
-        //         let newDefenseList = [...defenseList, json]
-        //         setDefenseList(newDefenseList)
-        //         setIsAddDefense(prev=>!prev)
-        //     })
+                let newDefenseList = [...defenseList, json]
+                setDefenseList(newDefenseList)
+                setIsAddDefense(prev=>!prev)
+            })
     }
 
     
