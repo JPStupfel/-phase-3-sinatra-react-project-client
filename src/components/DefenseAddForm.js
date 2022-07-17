@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-export default function DefenseAddForm ({setIsAddDefense, handleDefensePostSubmit, currentAttack}) {
+export default function DefenseAddForm ({setIsAddDefense, handlePostDefense, currentAttack}) {
 
     let dummyDefense = {name: "DummyDefense", notes: "Dummy", result: "Dummy", stage: "Dummy", attack_id: currentAttack.id}
 
@@ -16,8 +16,8 @@ export default function DefenseAddForm ({setIsAddDefense, handleDefensePostSubmi
 
     function handleSubmit(event){
         event.preventDefault()
-        handleDefensePostSubmit(defenseMod)
-        setIsAddDefense(false)
+        handlePostDefense(defenseMod)
+        // setIsAddDefense(false)
     }
 
     

@@ -13,7 +13,8 @@ export default function DisplayContent({
     handleDeleteDefense,
     handleAddDefense,
     isAddDefense,
-    setIsEditDefense}){
+    setIsEditDefense,
+    handlePostDefense}){
 
     const [showGif, setShowGif] = useState(true)
     // const [currentDefense, setCurrentDefense]=useState({})
@@ -52,7 +53,8 @@ export default function DisplayContent({
                 handleDeleteDefense={handleDeleteDefense}
                 isAddDefense={isAddDefense}
                 setIsEditDefense={setIsEditDefense}
-                currentAttack={currentAttack} />
+                currentAttack={currentAttack}
+                handlePostDefense={handlePostDefense} />
             </div>
 
             </span>  

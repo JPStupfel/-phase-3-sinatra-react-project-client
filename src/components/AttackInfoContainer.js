@@ -13,7 +13,9 @@ export default function AttackInfoContainer({currentAttack,
     handleDeleteDefense,
     handleAddDefense,
     isAddDefense,
-    setIsEditDefense}){
+    setIsEditDefense,
+    handlePostDefense,
+    setIsAddDefense}){
     
         
     return(
@@ -32,6 +34,8 @@ export default function AttackInfoContainer({currentAttack,
                 handleAddDefense={handleAddDefense}
                 isAddDefense={isAddDefense}
                 setIsEditDefense={setIsEditDefense}
+                handlePostDefense={handlePostDefense}
+                setIsAddDefense={setIsAddDefense}
                 /> 
             :
                 <>Select an Attack to Begin</>

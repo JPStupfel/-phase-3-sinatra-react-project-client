@@ -3,7 +3,13 @@ import DefenseEditor from "./DefenseEditor";
 import DefenseContentDisplay from "./DefenseContentDisplay";
 import DefenseAddForm from "./DefenseAddForm";
 
-export default function DefenseDisplay({currentDefense, currentAttack, handleDefensePatchSubmit, handleDeleteDefense, isAddDefense, setIsAddDefense, handleDefensePostSubmit}){
+export default function DefenseDisplay({
+    currentDefense, 
+    currentAttack, 
+    handleDefensePatchSubmit, handleDeleteDefense, 
+    isAddDefense, 
+    setIsAddDefense, 
+     handlePostDefense}){
     
 
 
@@ -32,7 +38,7 @@ export default function DefenseDisplay({currentDefense, currentAttack, handleDef
         <DefenseAddForm 
         currentDefense={currentDefense}
         setIsAddDefense={setIsAddDefense}
-        handleDefensePostSubmit={handleDefensePostSubmit}
+        handlePostDefense={handlePostDefense}
         currentAttack={currentAttack}/>
 
         :

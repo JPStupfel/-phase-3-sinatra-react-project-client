@@ -173,6 +173,7 @@ export default function Home(props){
             handleAddDefense={handleAddDefense}
             isAddDefense={isAddDefense}
             setIsAddDefense={setIsAddDefense}
+            handlePostDefense={handlePostDefense}
             />
 
         }
