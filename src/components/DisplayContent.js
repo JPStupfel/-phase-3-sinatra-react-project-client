@@ -51,7 +51,8 @@ export default function DisplayContent({
                 handleDefensePatchSubmit={handleDefensePatchSubmit}
                 handleDeleteDefense={handleDeleteDefense}
                 isAddDefense={isAddDefense}
-                setIsEditDefense={setIsEditDefense} />
+                setIsEditDefense={setIsEditDefense}
+                currentAttack={currentAttack} />
             </div>
 
             </span>  

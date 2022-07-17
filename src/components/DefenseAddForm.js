@@ -1,11 +1,15 @@
 import React, {useState} from "react";
 
-export default function DefenseAddForm ({currentDefense, setIsAddDefense, handleDefensePostSubmit}) {
+export default function DefenseAddForm ({setIsAddDefense, handleDefensePostSubmit, currentAttack}) {
 
-    const [defenseMod, setDefenseMod] = useState(currentDefense)
+    let dummyDefense = {name: "DummyDefense", notes: "Dummy", result: "Dummy", stage: "Dummy", attack_id: currentAttack.id}
+
+    const [defenseMod, setDefenseMod] = useState(dummyDefense)
 
     function handleChange(event){
-       let newDefense = {...defenseMod}
+       let newDefense = {
+        ...defenseMod
+        }
        newDefense[event.target.id] = event.target.value
        setDefenseMod(newDefense)
     }
