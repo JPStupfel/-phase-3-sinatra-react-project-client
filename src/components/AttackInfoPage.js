@@ -13,7 +13,7 @@ export default function AttackInfoPage({
     setCurrentDefense,
     currentDefense,
     handleDeleteDefense,
-    handlePostDefense}){
+    handleAddDefense}){
 
     const [isEdit, setIsEdit] = useState(false)
     
@@ -36,7 +36,7 @@ export default function AttackInfoPage({
         setCurrentDefense={setCurrentDefense}
         currentDefense={currentDefense}
         handleDeleteDefense={handleDeleteDefense}
-        handlePostDefense={handlePostDefense}/> 
+        handleAddDefense={handleAddDefense}/> 
         : 
         <EditAttack 
         currentAttack={currentAttack} handlePatchAttack={handlePatchAttack} setIsEdit={setIsEdit}/>}

@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import DefenseCard from "./DefenseCard";
 
 
-export default function DefenseCardContainer({ defenseList, currentAttack, setCurrentDefense, handlePostDefense}){
+export default function DefenseCardContainer({ defenseList, currentAttack, setCurrentDefense, handleAddDefense}){
 
 
     const showDefenses = defenseList.filter(e=>e.attack_id==currentAttack.id)
@@ -25,7 +25,7 @@ export default function DefenseCardContainer({ defenseList, currentAttack, setCu
                 {defenseCards}
 
             <button
-            onClick={handlePostDefense}
+            onClick={handleAddDefense}
             >Add new Defense!</button>
 
             </div>

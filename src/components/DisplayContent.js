@@ -11,7 +11,7 @@ export default function DisplayContent({
     setCurrentDefense,
     currentDefense,
     handleDeleteDefense,
-    handlePostDefense}){
+    handleAddDefense}){
 
     const [showGif, setShowGif] = useState(true)
     // const [currentDefense, setCurrentDefense]=useState({})
@@ -41,7 +41,7 @@ export default function DisplayContent({
                 currentAttack={currentAttack}
                 defenseList={defenseList}
                 setCurrentDefense={setCurrentDefense}
-                handlePostDefense={handlePostDefense} />
+                handleAddDefense={handleAddDefense} />
 
             <div className="image-box">
                 <DefenseDisplay 
