@@ -172,6 +172,7 @@ export default function Home(props){
             handleDeleteDefense={handleDeleteDefense}
             handleAddDefense={handleAddDefense}
             isAddDefense={isAddDefense}
+            setIsAddDefense={setIsAddDefense}
             />
 
         }

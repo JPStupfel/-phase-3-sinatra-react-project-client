@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 import DefenseEditor from "./DefenseEditor";
 import DefenseContentDisplay from "./DefenseContentDisplay";
+import DefenseAddForm from "./DefenseAddForm";
 
-export default function DefenseDisplay({currentDefense, handleDefensePatchSubmit, handleDeleteDefense, isAddDefense}){
+export default function DefenseDisplay({currentDefense, handleDefensePatchSubmit, handleDeleteDefense, isAddDefense, setIsAddDefense, handleDefensePostSubmit}){
     
 
 
@@ -28,8 +29,10 @@ export default function DefenseDisplay({currentDefense, handleDefensePatchSubmit
         
         isAddDefense ? 
         
-        <div>hello</div>
-
+        <DefenseAddForm 
+        currentDefense={currentDefense}
+        setIsAddDefense={setIsAddDefense}
+        handleDefensePostSubmit={handleDefensePostSubmit}/>
 
         :
 
