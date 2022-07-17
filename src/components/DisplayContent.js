@@ -10,7 +10,8 @@ export default function DisplayContent({
     handleDefensePatchSubmit,
     setCurrentDefense,
     currentDefense,
-    handleDeleteDefense}){
+    handleDeleteDefense,
+    handlePostDefense}){
 
     const [showGif, setShowGif] = useState(true)
     // const [currentDefense, setCurrentDefense]=useState({})
@@ -39,7 +40,8 @@ export default function DisplayContent({
                <DefenseCardContainer
                 currentAttack={currentAttack}
                 defenseList={defenseList}
-                setCurrentDefense={setCurrentDefense} />
+                setCurrentDefense={setCurrentDefense}
+                handlePostDefense={handlePostDefense} />
 
             <div className="image-box">
                 <DefenseDisplay 

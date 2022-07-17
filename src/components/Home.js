@@ -15,6 +15,7 @@ export default function Home(props){
     const [currentAttack, setCurrentAttack] = useState({})
     const [isAdd, setIsAdd] = useState(false)
     const [currentDefense, setCurrentDefense]=useState({})
+    const [isAddDefense, setIsAddDefense] = useState(false)
 
     useEffect(
         ()=> {fetch('http://localhost:9292/attacks').then(r=>r.json()).then(d=>setAttackList(d)) }
@@ -118,6 +119,25 @@ export default function Home(props){
             })
     }
 
+    function handlePostDefense(defenseMod){
+   
+        console.log('ready post', defenseMod)
+        // fetch(`http://localhost:9292/attacks`, {
+        //     method: 'POST',
+        //     body: JSON.stringify(defenseMod),
+        //     headers: {
+        //       'Content-type': 'application/json; charset=UTF-8',
+        //     },
+        //   })
+        //     .then((response) => response.json())
+        //     .then((json) =>{
+                
+        //         let newDefenseList = [...defenseList, json]
+        //         setDefenseList(newDefenseList)
+        //         setIsAddDefense(prev=>!prev)
+        //     })
+    }
+
     
 
     return(
@@ -145,6 +165,7 @@ export default function Home(props){
             setCurrentDefense={setCurrentDefense}
             currentDefense={currentDefense}
             handleDeleteDefense={handleDeleteDefense}
+            handlePostDefense={handlePostDefense}
             />
 
         }
