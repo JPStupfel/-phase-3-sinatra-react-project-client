@@ -45,7 +45,8 @@ export default function DefenseDisplay({
 
        <DefenseContentDisplay 
        handleDeleteDefense={handleDeleteDefense}
-       currentDefense={currentDefense} />
+       currentDefense={currentDefense}
+       setIsEditDefense={setIsEditDefense} />
        
     }
     </>
