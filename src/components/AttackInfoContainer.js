@@ -3,7 +3,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import AttackInfoPage from "./AttackInfoPage";
 
 
-export default function AttackInfoContainer({currentAttack,
+export default function AttackInfoContainer({
+    currentAttack,
     handlePatchAttack,
     handleDeleteAttack,
     defenseList,

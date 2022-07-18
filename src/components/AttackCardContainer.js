@@ -3,7 +3,7 @@ import AttackCard from "./AttackCard"
 import 'bootstrap/dist/css/bootstrap.css';
 
 
-export default function AttackCardContainer({handleClickAttack, attackList, setIsAdd}){
+export default function AttackCardContainer({handleClickAttack, attackList, setIsAdd, setCurrentDefense}){
 
 
     const attackCards = attackList.map(e=><AttackCard attack={e} key={e.id} handleClickAttack={handleClickAttack}/>)

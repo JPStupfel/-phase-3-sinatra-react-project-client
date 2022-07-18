@@ -27,6 +27,7 @@ export default function Home(props){
     )
     function handleClickAttack(newAttack){
         setCurrentAttack(newAttack)
+        setCurrentDefense({})
     }   
 
     function handlePatchAttack(attackMod){
@@ -151,7 +152,9 @@ export default function Home(props){
         <AttackCardContainer 
         handleClickAttack={handleClickAttack} 
         attackList={attackList}
-        setIsAdd={setIsAdd} />
+        setIsAdd={setIsAdd}
+        setCurrentDefense={setCurrentDefense}
+         />
 
         { isAdd ?
 
@@ -163,6 +166,7 @@ export default function Home(props){
 
             <AttackInfoContainer 
             currentAttack={currentAttack}
+            setCurrentAttack={setCurrentAttack}
             handlePatchAttack={handlePatchAttack}
             handleDeleteAttack={handleDeleteAttack}
             defenseList={defenseList}
