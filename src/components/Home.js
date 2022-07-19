@@ -25,6 +25,13 @@ export default function Home(props){
         ()=> {fetch('http://localhost:9292/defenses').then(r=>r.json()).then(d=>setDefenseList(d)) }
         ,[]
     )
+    useEffect(
+        ()=> {fetch('http://localhost:9292/positions').then(r=>r.json()).then(d=>console.log(d)) }
+        ,[]
+    )
+
+
+
     function handleClickAttack(newAttack){
         setCurrentAttack(newAttack)
         setCurrentDefense({})
