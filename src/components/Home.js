@@ -21,9 +21,13 @@ export default function Home(props){
 
      const positionAttackList = currentPosition ? attackList.filter(e=>e.position_id==currentPosition.id) : []
     
+    // useEffect(
+    //     ()=> {fetch('http://localhost:9292/attacks').then(r=>r.json()).then(d=>setAttackList(d)) }
+    //     ,[]
+    // )
     useEffect(
-        ()=> {fetch('http://localhost:9292/attacks').then(r=>r.json()).then(d=>setAttackList(d)) }
-        ,[]
+        ()=> {fetch(`http://localhost:9292/positions/${currentPosition.id}/attacks`).then(r=>r.json()).then(d=>setAttackList(d)) }
+        ,[currentPosition]
     )
     useEffect(
         ()=> {fetch('http://localhost:9292/defenses').then(r=>r.json()).then(d=>setDefenseList(d)) }
