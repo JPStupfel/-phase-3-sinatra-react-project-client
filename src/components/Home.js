@@ -16,6 +16,8 @@ export default function Home(props){
     const [isAdd, setIsAdd] = useState(false)
     const [currentDefense, setCurrentDefense]=useState({})
     const [isAddDefense, setIsAddDefense] = useState(false)
+    const [positions, setPositions]= useState([])
+    const [currentPosition, setCurrentPosition] = useState(positions[0])
 
     useEffect(
         ()=> {fetch('http://localhost:9292/attacks').then(r=>r.json()).then(d=>setAttackList(d)) }
@@ -26,10 +28,9 @@ export default function Home(props){
         ,[]
     )
     useEffect(
-        ()=> {fetch('http://localhost:9292/positions').then(r=>r.json()).then(d=>console.log(d)) }
+        ()=> {fetch('http://localhost:9292/positions').then(r=>r.json()).then(d=>{setPositions(d); setCurrentPosition(d[0])}) }
         ,[]
     )
-
 
 
     function handleClickAttack(newAttack){
@@ -152,6 +153,7 @@ export default function Home(props){
     }
 
     
+console.log(currentPosition)
 
     return(
     <div className="d-flex" id="wrapper">
