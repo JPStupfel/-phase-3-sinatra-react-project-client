@@ -21,17 +21,16 @@ export default function Home(props){
 
      const positionAttackList = currentPosition ? attackList.filter(e=>e.position_id==currentPosition.id) : []
     
-    // useEffect(
-    //     ()=> {fetch('http://localhost:9292/attacks').then(r=>r.json()).then(d=>setAttackList(d)) }
-    //     ,[]
-    // )
+
     useEffect(
+        //    get only those attacks associated with a particular position, thus reducing client burden
         ()=> {fetch(`http://localhost:9292/positions/${currentPosition.id}/attacks`).then(r=>r.json()).then(d=>setAttackList(d)) }
         ,[currentPosition]
     )
     useEffect(
-        ()=> {fetch('http://localhost:9292/defenses').then(r=>r.json()).then(d=>setDefenseList(d)) }
-        ,[]
+        //    get only those defenses associated with a particular attack, thus reducing client burden
+        ()=> {fetch(`http://localhost:9292/attacks/${currentAttack.id}/defenses`).then(r=>r.json()).then(d=>setDefenseList(d)) }
+        ,[currentAttack]
     )
     useEffect(
         ()=> {fetch('http://localhost:9292/positions').then(r=>r.json()).then(d=>setPositions(d)) }
