@@ -39,13 +39,14 @@ export default function DisplayContent({
                     
             </span>
             <span style={{"display":"flex", "width":"100%"}} >          
-
-               <DefenseCardContainer
-                currentAttack={currentAttack}
-                defenseList={defenseList}
-                setCurrentDefense={setCurrentDefense}
-                handleAddDefense={handleAddDefense} />
-
+                    
+            <DefenseCardContainer
+            currentAttack={currentAttack}
+            defenseList={defenseList}
+            setCurrentDefense={setCurrentDefense}
+            handleAddDefense={handleAddDefense} />
+            {
+                currentDefense.id ? 
             <div className="image-box">
                 <DefenseDisplay 
                 currentDefense={currentDefense}
@@ -56,6 +57,11 @@ export default function DisplayContent({
                 currentAttack={currentAttack}
                 handlePostDefense={handlePostDefense} />
             </div>
+            :         
+            <div className="image-box" style={{"display": "block"}}>
+                Select Defense to View!
+            </div>
+        }
 
             </span>  
         </div>
