@@ -17,8 +17,10 @@ export default function Home(props){
     const [currentDefense, setCurrentDefense]=useState({})
     const [isAddDefense, setIsAddDefense] = useState(false)
     const [positions, setPositions]= useState([])
-    const [currentPosition, setCurrentPosition] = useState(positions[0])
+    const [currentPosition, setCurrentPosition] = useState({})
 
+     const positionAttackList = currentPosition ? attackList.filter(e=>e.position_id==currentPosition.id) : []
+    
     useEffect(
         ()=> {fetch('http://localhost:9292/attacks').then(r=>r.json()).then(d=>setAttackList(d)) }
         ,[]
@@ -28,7 +30,7 @@ export default function Home(props){
         ,[]
     )
     useEffect(
-        ()=> {fetch('http://localhost:9292/positions').then(r=>r.json()).then(d=>{setPositions(d); setCurrentPosition(d[0])}) }
+        ()=> {fetch('http://localhost:9292/positions').then(r=>r.json()).then(d=>setPositions(d)) }
         ,[]
     )
 
@@ -150,15 +152,14 @@ export default function Home(props){
                 setIsAddDefense(prev=>!prev)
             })
     }
-
+    console.log(positionAttackList)
     
-console.log(currentPosition)
     return(
     <div className="d-flex" id="wrapper">
 
         <AttackCardContainer 
         handleClickAttack={handleClickAttack} 
-        attackList={attackList}
+        attackList={positionAttackList}
         setIsAdd={setIsAdd}
         setCurrentDefense={setCurrentDefense}
         positions={positions}
