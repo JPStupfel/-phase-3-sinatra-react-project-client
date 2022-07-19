@@ -74,6 +74,7 @@ App
 ....|----AddAttack
 ....|---AttackCardContainer
 ....|........ |----------AttackCard
+....|........ |----------PositionDropDownMenu
 ....|---AttackInfoContainer
 ....|-- AttackInfoPage
 ....|-- DisplayContent

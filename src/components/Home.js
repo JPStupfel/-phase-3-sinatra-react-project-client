@@ -95,7 +95,6 @@ export default function Home(props){
     }
 
     function handleDefensePatchSubmit(defenseMod){
-        console.log('from Home', defenseMod)
 
         let newDefenseList = defenseList.map(e=>e.id===defenseMod.id ? defenseMod : e)
         setDefenseList(newDefenseList)
@@ -153,7 +152,6 @@ export default function Home(props){
     }
 
     
-console.log(currentPosition)
 
     return(
     <div className="d-flex" id="wrapper">
