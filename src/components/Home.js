@@ -163,6 +163,8 @@ console.log(currentPosition)
         attackList={attackList}
         setIsAdd={setIsAdd}
         setCurrentDefense={setCurrentDefense}
+        positions={positions}
+        setPositions={setPositions}
          />
 
         { isAdd ?
