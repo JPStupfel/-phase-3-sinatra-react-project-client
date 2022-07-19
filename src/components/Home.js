@@ -19,8 +19,7 @@ export default function Home(props){
     const [positions, setPositions]= useState([])
     const [currentPosition, setCurrentPosition] = useState({})
 
-     const positionAttackList = currentPosition ? attackList.filter(e=>e.position_id==currentPosition.id) : []
-    
+   
 
     useEffect(
         //    get only those attacks associated with a particular position, thus reducing client burden
@@ -155,14 +154,13 @@ export default function Home(props){
                 setIsAddDefense(prev=>!prev)
             })
     }
-    console.log(positionAttackList)
-    
+
     return(
     <div className="d-flex" id="wrapper">
 
         <AttackCardContainer 
         handleClickAttack={handleClickAttack} 
-        attackList={positionAttackList}
+        attackList={attackList}
         setIsAdd={setIsAdd}
         setCurrentDefense={setCurrentDefense}
         positions={positions}
