@@ -10,7 +10,8 @@ export default function AttackCardContainer({
     setIsAdd, 
     setCurrentDefense,  
     positions,
-    setPositions
+    setPositions,
+    setCurrentPosition
     }){
 
 
@@ -19,7 +20,7 @@ export default function AttackCardContainer({
 
     return(
         <div class="bg-light border-right vh-100" id="sidebar-wrapper">
-        <PositionDropDownMenu positions={positions}/>
+        <PositionDropDownMenu positions={positions} setCurrentPosition={setCurrentPosition}/>
         <div class="list-group list-group-flush overflow-auto h-100">
           
             {attackCards}

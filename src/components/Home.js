@@ -152,7 +152,7 @@ export default function Home(props){
     }
 
     
-
+console.log(currentPosition)
     return(
     <div className="d-flex" id="wrapper">
 
@@ -163,6 +163,7 @@ export default function Home(props){
         setCurrentDefense={setCurrentDefense}
         positions={positions}
         setPositions={setPositions}
+        setCurrentPosition={setCurrentPosition}
          />
 
         { isAdd ?
