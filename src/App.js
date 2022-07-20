@@ -10,6 +10,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Narrative from './components/Narrative';
 
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
    <BrowserRouter>
    <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="Narratives" element={<>Narrative</>} />
+      <Route path="Narratives" element={<Narrative/>} />
    </Routes>
    </BrowserRouter>
    
