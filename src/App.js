@@ -16,10 +16,14 @@ import Narrative from './components/Narrative';
 function App() {
   return (
     <>
-    {/* <Link to="/">NoteBook</Link> |{" "}
-    <Link to="/Narratives">Narratives</Link> */}
-
+ 
    <BrowserRouter>
+   <div>
+   <Link to="/">NoteBook</Link> 
+   </div>
+   <div>
+   <Link to="/Narratives">Narratives</Link>
+   </div>
    <Routes>
       <Route path="/" element={<Home />} />
       <Route path="Narratives" element={<Narrative/>} />
