@@ -21,9 +21,9 @@ export default function EditAttack({currentAttack, handlePatchAttack, setIsEdit}
     return(
         <form
         onSubmit={handleSubmit}>
-        <div class="container-fluid">
+        <div className="container-fluid">
 
-            <h1 class="mt-4">Details on this Attack!</h1>
+            <h1 className="mt-4">Details on this Attack!</h1>
             
             <p>This Attack has a name of 
                 <input 

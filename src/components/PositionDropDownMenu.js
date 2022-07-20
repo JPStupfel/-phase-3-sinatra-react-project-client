@@ -7,7 +7,7 @@ export default function PositionDropDownMenu({positions, setCurrentPosition}){
 
     function DropDownItem({position}){
         return(
-            <a class="dropdown-item" onClick={()=>setCurrentPosition(position)}>{position.name}</a>
+            <a className="dropdown-item" onClick={()=>setCurrentPosition(position)}>{position.name}</a>
         )
     }
 
@@ -15,12 +15,12 @@ export default function PositionDropDownMenu({positions, setCurrentPosition}){
         e=> <DropDownItem position={e} key={e.id}/>)
     
     return(
-<div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<div className="dropdown">
+    <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Select Position
     </button>
 
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
         {positionsMap}
     </div>
 

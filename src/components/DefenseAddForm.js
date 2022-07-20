@@ -24,7 +24,7 @@ export default function DefenseAddForm ({setIsAddDefense, handlePostDefense, cur
     
     return (
 <form  onSubmit={handleSubmit}>
-    <h1 class="mt-4">Add a new Defense!</h1>
+    <h1 className="mt-4">Add a new Defense!</h1>
     <input onChange={handleChange} id="name" value={defenseMod.name}></input>
     <input onChange={handleChange} id='result' value={defenseMod.result}></input>
     <input onChange={handleChange} id='notes' value={defenseMod.notes}></input>

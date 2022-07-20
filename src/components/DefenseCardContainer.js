@@ -18,9 +18,9 @@ export default function DefenseCardContainer({ defenseList, currentAttack, setCu
     return(
         <div className="image-box"  id="sidebar-wrapper">
             
-            <div class="sidebar-heading">BJJ Defenses </div>
+            <div className="sidebar-heading">BJJ Defenses </div>
 
-            <div class="list-group list-group-flush overflow-auto">
+            <div className="list-group list-group-flush overflow-auto">
             
                 {defenseCards}
 

@@ -23,12 +23,15 @@ export default function Home(props){
 
     useEffect(
         //    get only those attacks associated with a particular position, thus reducing client burden
-        ()=> {fetch(`http://localhost:9292/positions/${currentPosition.id}/attacks`).then(r=>r.json()).then(d=>setAttackList(d)) }
+        ()=> {if (currentPosition.id) {fetch(`http://localhost:9292/positions/${currentPosition.id}/attacks`).then(r=>r.json()).then(d=>setAttackList(d))} }
         ,[currentPosition]
     )
     useEffect(
         //    get only those defenses associated with a particular attack, thus reducing client burden
-        ()=> {fetch(`http://localhost:9292/attacks/${currentAttack.id}/defenses`).then(r=>r.json()).then(d=>setDefenseList(d)) }
+        ()=> {
+            if (currentAttack.id){
+            fetch(`http://localhost:9292/attacks/${currentAttack.id}/defenses`).then(r=>r.json()).then(d=>setDefenseList(d)) }
+        }
         ,[currentAttack]
     )
     useEffect(

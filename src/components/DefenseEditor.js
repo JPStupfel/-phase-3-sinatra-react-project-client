@@ -20,7 +20,7 @@ export default function DefenseEditor ({currentDefense, setIsEditDefense, handle
     
     return (
 <form  onSubmit={handleSubmit}>
-    <h1 class="mt-4">Edit this Defense!</h1>
+    <h1 className="mt-4">Edit this Defense!</h1>
     <input onChange={handleChange} id="name" value={defenseMod.name}></input>
     <input onChange={handleChange} id='result' value={defenseMod.result}></input>
     <input onChange={handleChange} id='notes' value={defenseMod.notes}></input>

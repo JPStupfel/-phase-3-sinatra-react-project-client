@@ -23,11 +23,11 @@ export default function AttackInfoPage({
 
     return(
         <div id="page-content-wrapper">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom">
             
-            <button onClick={()=>setIsEdit(e=>!e)} class="btn btn-primary" id="menu-toggle">{ isEdit ? 'Cancel' : 'Edit this Attack!'}</button>
+            <button onClick={()=>setIsEdit(e=>!e)} className="btn btn-primary" id="menu-toggle">{ isEdit ? 'Cancel' : 'Edit this Attack!'}</button>
 
-            <button onClick={()=>handleDeleteAttack(currentAttack)} class="btn btn-primary" id="menu-toggle">Delete Attack!</button>
+            <button onClick={()=>handleDeleteAttack(currentAttack)} className="btn btn-primary" id="menu-toggle">Delete Attack!</button>
 
           
         </nav>

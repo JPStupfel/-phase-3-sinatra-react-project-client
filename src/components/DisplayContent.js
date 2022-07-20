@@ -23,7 +23,7 @@ export default function DisplayContent({
         <div >
             <span style={{"display":"flex", "width":"100%"}} >
                 <div className="image-box">
-                    <h1 class="mt-4">Details on this Attack!</h1>
+                    <h1 className="mt-4">Details on this Attack!</h1>
                     <p>This Attack has a name of {currentAttack.name}</p>
                     <p>result of {currentAttack.result}.</p>
                     <p>notes: {currentAttack.notes}</p>

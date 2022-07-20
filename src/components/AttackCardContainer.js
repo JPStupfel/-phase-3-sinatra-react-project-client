@@ -19,9 +19,9 @@ export default function AttackCardContainer({
     
 
     return(
-        <div class="bg-light border-right vh-100" id="sidebar-wrapper">
+        <div className="bg-light border-right vh-100" id="sidebar-wrapper">
         <PositionDropDownMenu positions={positions} setCurrentPosition={setCurrentPosition}/>
-        <div class="list-group list-group-flush overflow-auto h-100">
+        <div className="list-group list-group-flush overflow-auto h-100">
           
             {attackCards}
             <button onClick={()=>setIsAdd(p=>!p)}>Add Attack!</button>
