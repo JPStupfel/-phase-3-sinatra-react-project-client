@@ -136,7 +136,7 @@ export default function Home(props){
 
     function handleAddDefense(){
         setIsAddDefense(prev=>!prev)
-        console.log('ready to add defense')
+        console.log(isAddDefense)
     }
 
     function handlePostDefense(defenseMod){

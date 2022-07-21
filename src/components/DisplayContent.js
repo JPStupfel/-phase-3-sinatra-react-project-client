@@ -46,7 +46,8 @@ export default function DisplayContent({
             setCurrentDefense={setCurrentDefense}
             handleAddDefense={handleAddDefense} />
             {
-                currentDefense.id ? 
+                currentDefense.id || isAddDefense ? 
+
             <div className="image-box">
                 <DefenseDisplay 
                 currentDefense={currentDefense}

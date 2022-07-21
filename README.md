@@ -80,9 +80,8 @@ App
 ....|-- AttackInfoPage
 ....|-- DisplayContent
 ....| |------ DefenseCardContainer
-....| |.... |---------------------- DefenseEditor
-....| |---------------------- DefenseDisplay
-....| |---------------------- DefenseAddForm
-....| |---------------------- DefenseContentDisplay
-....| |---------------------- DefenseEditor
+....| |----- DefenseDisplay
+....| |........|------- DefenseEditor
+....| |........|------- DefenseAddForm
+....| |........|------- DefenseContentDisplay
 ....|--------------EditAttack
