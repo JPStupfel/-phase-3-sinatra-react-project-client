@@ -17,7 +17,6 @@ function App() {
   return (
     <>
  
-   <BrowserRouter>
    <div>
    <Link to="/">NoteBook</Link> 
    </div>
@@ -28,7 +27,6 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="Narratives" element={<Narrative/>} />
    </Routes>
-   </BrowserRouter>
    
    </>
 
