@@ -22,6 +22,7 @@ When in this position, each fighter has numerous "attacks" at their disposal. Co
 
 Below is a map of the component hierarchy of all React Components used in this project.
 
+```
 App
 |-Narrative
 |- Home
@@ -38,6 +39,8 @@ App
 ....| ...........|------- DefenseAddForm
 ....| ...........|------- DefenseContentDisplay
 ....|--------------EditAttack
+
+```
 
 ## Getting Started
 
