@@ -4,8 +4,11 @@ import 'bootstrap/dist/css/bootstrap.css';
 import DefenseCard from "./DefenseCard";
 
 
-export default function DefenseCardContainer({ defenseList, currentAttack, setCurrentDefense, handleAddDefense}){
-
+export default function DefenseCardContainer({ 
+    defenseList, 
+    currentAttack, 
+    setCurrentDefense, 
+    handleAddDefense}){
 
     const showDefenses = defenseList.filter(e=>e.attack_id==currentAttack.id)
 
@@ -14,6 +17,7 @@ export default function DefenseCardContainer({ defenseList, currentAttack, setCu
         <DefenseCard setCurrentDefense={setCurrentDefense} defense={e} key={e.id}/>         
         )
     
+        // console.log(showDefenses)
 
     return(
         <div className="image-box"  id="sidebar-wrapper">

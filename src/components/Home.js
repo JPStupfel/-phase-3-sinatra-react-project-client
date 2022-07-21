@@ -141,7 +141,6 @@ export default function Home(props){
 
     function handlePostDefense(defenseMod){
    
-        console.log('ready post', defenseMod)
         fetch(`http://localhost:9292/defenses`, {
             method: 'POST',
             body: JSON.stringify(defenseMod),
@@ -155,9 +154,11 @@ export default function Home(props){
                 let newDefenseList = [...defenseList, json]
                 setDefenseList(newDefenseList)
                 setIsAddDefense(prev=>!prev)
+                console.log(json)
+
             })
     }
-
+        // console.log(defenseList)
     return(
     <div className="d-flex" id="wrapper">
 
