@@ -70,7 +70,7 @@ The backend and the frontend for this project are in **two different repositorie
 **Fork and clone** from
 
 ```
-git@github.com:JPStupfel/-phase-3-sinatra-react-project-client.git
+git@github.com:JPStupfel/phase-3-sinatra-react-project-server.git
 
 ```
 
