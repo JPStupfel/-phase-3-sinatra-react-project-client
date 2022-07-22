@@ -87,6 +87,11 @@ $ bundle exec rake server
 This will run your server on port
 [http://localhost:9292](http://localhost:9292).
 
+## Project Video Walkthrough
+
+Click the image below to view the walkthrough video for this project at https://youtu.be/IPb1ElsbqDs
+[![Alt text](./Images/youTubeLink.png)](https://youtu.be/IPb1ElsbqDs)
+
 ## Notes from Create React App
 
 npm test
